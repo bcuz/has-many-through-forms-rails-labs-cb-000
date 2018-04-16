@@ -7,3 +7,11 @@ hum... must be something small, man
 <% @post.categories.each do |cat| %>
    <%= cat.name %>
 <%end %>
+
+
+<%= form_for @comment do |f| %>
+<%= f.label "Content" %>
+<%= f.text_area :content %>
+<%= f.submit %>
+
+<% end %>
