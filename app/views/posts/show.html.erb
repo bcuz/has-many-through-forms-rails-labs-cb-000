@@ -20,6 +20,9 @@ hum... must be something small, man
 <%= form_for @comment do |f| %>
 <%= f.label "Content" %>
 <%= f.text_area :content %>
+<input type="hidden" name="comment[post_id]" value="<%= @post.id  %>">
+
+<!--  no idea supposed i could put the post id... -->
 <%= f.collection_select :user_id, User.all, :id, :username  %>
 <%= f.submit %>
 
