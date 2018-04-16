@@ -4,6 +4,6 @@
 <!--  this not showing up when it should.
 hum... must be something small, man
 -->
-<% @post.categories do |cat| %>
+<% @post.categories.each do |cat| %>
    <%= cat.name %>
 <%end %>
