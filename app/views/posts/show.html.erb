@@ -8,8 +8,9 @@ hum... must be something small, man
    <%= cat.name %>
 <%end %>
 
-<% @post.comments.each do |cat| %>
-   <%= cat.content %>
+<% @post.comments.each do |comment| %>
+   <%= "#{comment.user.username} says: #{comment.content}" %>
+
 <%end %>
 <% @post.users.uniq.each do |user| %>
    <%= link_to user.username, user_path(user) %>
@@ -20,6 +21,8 @@ hum... must be something small, man
 <%= form_for @comment do |f| %>
 <%= f.label "Content" %>
 <%= f.text_area :content %>
+
+<!-- pulled out of nowhere, we used raw html in a prev lesson, tho -->
 <input type="hidden" name="comment[post_id]" value="<%= @post.id  %>">
 
 <!--  no idea supposed i could put the post id... -->
