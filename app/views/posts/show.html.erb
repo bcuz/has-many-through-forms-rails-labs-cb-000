@@ -1,6 +1,6 @@
 <%= @post.title %>
 <%= @post.content %>
 
-<% @users.each do |users| %>
-   <%= do something %>
+<% @post.categories do |cat| %>
+   <%= cat.name %>
 <%end %>
