@@ -1,2 +1,9 @@
 <%= @post.title %>
 <%= @post.content %>
+
+<!--  this not showing up when it should.
+hum... must be something small, man
+-->
+<% @post.categories do |cat| %>
+   <%= cat.name %>
+<%end %>
