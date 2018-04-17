@@ -25,10 +25,10 @@ hum... must be something small, man
 <!-- pulled out of nowhere, we used raw html in a prev lesson, tho -->
 <input type="hidden" name="comment[post_id]" value="<%= @post.id  %>">
 
-<!--  no idea supposed i could put the post id... -->
 <%= f.collection_select :user_id, User.all, :id, :username  %>
-<%= f.fields_for :users, @comment.users.build do |categories_fields| %>
-<%= categories_fields.text_field :username %>
+<!--  build_whatever for belongs_to -->
+<%= f.fields_for :user, @comment.build_user do |user_fields| %>
+<%= user_fields.text_field :username %>
 <% end %>
 <%= f.submit %>
 
